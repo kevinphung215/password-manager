@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Common styles for both light and dark modes */
+:root {
+    --white: #d7d7d7;
+    --gray: #cccccc;
+    --border-gray: #5a5a5a;
+    --dark-gray: #333333;
+    --black: #000000;
+    --red: #ff4f4f;
+    --green: #00c853;
+    --blue: #0073e6;
+    --yellow: #ffc107;
+}
+
+/* Light Mode styles */
+.light-mode {
+    --background-color: var(--white); 
+    --text-color: var(--black); 
+    --input-background: var(--dark-gray); 
+    --input-border: var(--dark-gray); 
+    --list-item-background: var(--gray); 
+    --edit-mode-background: var(--gray); 
+    --icon-color: var(--blue); 
+}
+
+/* Dark Mode styles */
+.dark-mode {
+    --background-color: var(--dark-gray); 
+    --text-color: var(--black);
+    --input-background: var(--dark-gray);
+    --input-border: var(--border-gray); 
+    --list-item-background: var(--dark-gray);
+    --edit-mode-background: var(--gray);
+    --icon-color: var(--blue); 
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+/* Style the container */
+#container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"],
+input[type="password"],
+#addButton {
+    width: 100%;
+    padding: 5px 0px;
+    margin: 3px 0px;
+    border: 1px solid var(--border-gray);
+    border-radius: 3px;
+    text-indent: 5px;
+    font-size: 14px;
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+#addButton {
+    background-color: var(--blue);
+    color: var(--button-text); 
+    width: 100%;
+    margin-top: 3px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Style the list */
+#list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+}
+
+/* Style each list item */
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+    border: 1px solid var(--gray);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    background-color: var(--background-color); 
+}
+
+.listContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.listInfo {
+    display: flex;
+    flex-direction: column;
+    text-indent: 5px;
+}
+
+.addDeleteContainer {
+    display: flex;
+}
+
+/* Style the Edit and Delete buttons with Font Awesome icons and smaller font size */
+.edit-button,
+.remove-button,
+.done-button {
+    width: 30px; /* Fixed width for buttons */
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.larger-icon {
+    font-size: 24px;
+    color: var(--yellow);
+}
+
+/* Style the Edit button with an edit icon */
+.edit-button i {
+    color: var(--blue);
+}
+
+.edit-button i.fas.fa-check {
+    color: var(--green); /* Change the color to green */
+}
+
+/* Style the Delete button with a trashcan icon */
+.remove-button i {
+    color: #dc3545; /* You can use a fixed color or a variable */
+}
+
+/* Remove padding and margin when in edit mode */
+.edit-mode .edit-button,
+.edit-mode .remove-button {
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the input fields with narrower width when in edit mode */
+.edit-mode input[type="text"],
+.edit-mode input[type="password"] {
+    padding: 3px;
+    margin: 0;
+    text-indent: 0px;
+    background-color: var(--edit-mode-background); 
+    color: var(--text-color); 
+}
+
+/* Style the mode toggle switch */
+.switch-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Style the checkbox as a switch */
+#modeSwitch {
+    display: none;
+}
+
+#modeSwitch + .switch-label {
+    position: relative;
+    padding-left: 40px;
+}
+
+#modeSwitch + .switch-label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 16px;
+    background-color: var(--gray);
+    border-radius: 16px;
+    transition: background-color 0.2s;
+}
+
+/* Style the switch button when in dark mode */
+#modeSwitch:checked + .switch-label:before {
+    background-color: var(--green); 
+}
+
+/* Dark Mode styles */
+.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Add styles for dark mode */
+.dark-mode-lighter {
+    background-color: var(--input-background); 
+    color: var(--text-color); 
+}
+
+.dark-mode h1 {
+    color: var(--white);
+}
+
+.dark-mode .listContainer {
+    background-color: var(--gray);
+}
+
+.dark-mode .list-item {
+    background-color: var(--dark-gray);
+}
+
+/* Style the switch button */
+.switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: var(--border-gray);
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Style the slider */
+.slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--gray);
+    border-radius: 50%;
+    transform: translateX(0);
+    transition: transform 0.3s;
+}
+
+.switch-label i {
+    top: 2px;
+    left: 2px;
+    font-size: 12px;
+    color: var(--icon-color); /* Use the icon-color variable */
+    transition: transform 0.3s;
+}
+
+/* Dark Mode styles */
+.dark-mode .switch {
+    background-color: var(--border-gray); 
+}
+
+.dark-mode .slider {
+    transform: translateX(20px);
+}
+
+/* Update the sun and moon icons to yellow in dark mode */
+.dark-mode .sun-icon,
+.dark-mode .moon-icon {
+    color: var(--yellow);
+}
+
+/* Add styles for the sun and moon icons */
+.sun-icon,
+.moon-icon {
+    color: var(--yellow);
+}

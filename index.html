@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="container">
+        <div class="titleContainer">
+            <h1>Password Manager</h1>
+            <div class="mode-toggle">
+                <label class="switch-label" for="modeSwitch">
+                    <div class="switch">
+                        <input type="checkbox" id="modeSwitch">
+                        <div class="slider"></div>
+                    </div>
+                    <i id="modeIcon" class="fas fa-sun larger-icon sun-icon"></i>
+                    <i id="modeIconMoon" class="fas fa-moon larger-icon moon-icon"></i>
+                </label>
+            </div>
+        </div>
+        <input type="text" id="websiteInput" placeholder="Website">
+        <input type="text" id="usernameInput" placeholder="Username">
+        <input type="password" id="passwordInput" placeholder="Password">
+        <button id="addButton">Add</button>
+        <ul id="list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

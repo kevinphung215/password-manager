@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Website Password List",
+    "version": "1.0",
+    "description": "Manage website, username and password data.",
+    "author": "Kevin Phung",
+    "permissions": ["storage"],
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Website Password List"
+    },
+    "permissions": ["activeTab"]
+}
